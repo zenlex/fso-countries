@@ -1,31 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Country from './components/Country'
-import { useFetch } from './hooks';
+import { useFetch, useField } from './hooks';
 
 function App() {
-  const [inputName, setInputName] = useState('');
+  // const [inputName, setInputName] = useState('');
   const [results, setResults] = useState([])
-
   const countries = useFetch("https://restcountries.com/v3.1/all?fields=name").apiData
+  const inputField = useField('text')
 
-  const filterResults = (txt) => {
-    setResults(countries.filter(country =>
-      country.name.common.search(new RegExp(txt, 'i')) !== -1))
-  }
+  useEffect(() => {
+    if (countries) {
+      setResults(countries.filter(country =>
+        country.name.common.search(new RegExp(inputField.value, 'i')) !== -1))
+    }
+  }, [inputField.value, countries])
 
   const showClickHandle = (country) => {
     setResults([country])
   }
 
-  const handleNameChange = (event) => {
-    const txt = event.target.value
-    setInputName(txt);
-    filterResults(txt)
-  }
-
   return (
     <div>
-      country name: <input value={inputName} onChange={handleNameChange} />
+      country name: <input {...inputField} />
       <Country results={results} showClickHandle={showClickHandle} />
     </div>
   );
