@@ -1,4 +1,4 @@
-import Weather from './Weather';
+import Weather from './Weather.tsx';
 import { useCountry } from '../hooks';
 import { Overlay, TextDiv } from './UtilityStyles';
 const ShortCountry = ({ name, clickHandle }) => {

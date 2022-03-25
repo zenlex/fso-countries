@@ -1,6 +1,24 @@
 import React from "react";
+type Props = {
+  weather: WeatherData,
+  city: string
+}
 
-const Weather = ({weather, city}) => { 
+type WeatherData = {
+  condition:{
+    text:string,
+    icon: string,
+  },
+  temp_f: string,
+  temp_c: string,
+  feelslike_f: string,
+  feelslike_c: string,
+  wind_mph: string,
+  wind_kph: string,
+  wind_dir: string
+}
+
+const Weather = ({weather, city}: Props) => { 
   return(
   <div>
           <h3>Current {city} Weather:</h3>
