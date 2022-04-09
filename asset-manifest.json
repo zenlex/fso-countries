@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/fso-countries/static/js/main.f325c9e7.js",
+    "static/media/geo-seamless-bg.jpg": "/fso-countries/static/media/geo-seamless-bg.9ba4309e893301420cc9.jpg",
+    "index.html": "/fso-countries/index.html",
+    "main.f325c9e7.js.map": "/fso-countries/static/js/main.f325c9e7.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f325c9e7.js"
+  ]
+}
