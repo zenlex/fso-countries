@@ -4,8 +4,8 @@ import { useFetch, useField } from './hooks';
 import { TextDiv, TextInput, Wrapper } from './components/UtilityStyles';
 function App() {
   // const [inputName, setInputName] = useState('');
-  const [results, setResults] = useState([]);
-  const countries = useFetch(
+  const [results, setResults] = useState<Array<string>>([]);
+  const countries: any = useFetch(
     'https://restcountries.com/v3.1/all?fields=name'
   ).apiData;
   const inputField = useField('text');
@@ -14,14 +14,14 @@ function App() {
     if (countries) {
       setResults(
         countries.filter(
-          (country) =>
+          (country: any) =>
             country.name.common.search(new RegExp(inputField.value, 'i')) !== -1
         )
       );
     }
   }, [inputField.value, countries]);
 
-  const showClickHandle = (country) => {
+  const showClickHandle = (country: string): void => {
     setResults([country]);
   };
 

@@ -1,14 +1,17 @@
 import Weather from './Weather';
 import { useCountry } from '../hooks';
 import { Overlay, TextDiv } from './UtilityStyles';
+
+// name and button only shown when more than one country passes filter
 const ShortCountry = ({ name, clickHandle }) => {
   return (
     <div>
-      {name} <button onClick={clickHandle}>show</button>
+      {name} <button onClick={clickHandle}>Show Details</button>
     </div>
   );
 };
 
+// country detail view - triggered by single country left in filter or user clicks 'show'
 const Country = ({ results, showClickHandle }) => {
   const countryData = useCountry(results);
   if (results.length === 0) return <div>not found...</div>;
