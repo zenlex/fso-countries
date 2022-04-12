@@ -1,8 +1,9 @@
 {
-  "name": "countries",
+  "name": "countries-info-search",
   "version": "0.1.0",
   "homepage": "https://zenlex.github.io/fso-countries",
   "private": true,
+  "description": "Search countries by name and get details from multiple APIs including current weather",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
