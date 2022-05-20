@@ -5,6 +5,7 @@
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
 Search countries by name and get details from multiple APIs including current weather
+[Live Demo](https://zenlex.github.io/fso-countries)
 
 ### Table of Contents
 - [Install](#install)
